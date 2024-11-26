@@ -156,24 +156,26 @@ const HorseFlip = () => {
     }
   };
 
-  // Add function to format number to 1 decimal place
-  const formatBetAmount = (amount) => {
-    return Math.round(amount * 10) / 10;
-  };
-
-  // Update bet controls
+  // Update bet controls with proper formatting
   const increaseBet = () => {
-    setBetAmount(prev => formatBetAmount(Math.min(prev + 0.1, balance)));
+    setBetAmount(prev => {
+      const newAmount = Math.min(prev + 0.1, balance);
+      return parseFloat(newAmount.toFixed(1));
+    });
   };
 
   const decreaseBet = () => {
-    setBetAmount(prev => formatBetAmount(Math.max(0.1, prev - 0.1)));
+    setBetAmount(prev => {
+      const newAmount = Math.max(0.1, prev - 0.1);
+      return parseFloat(newAmount.toFixed(1));
+    });
   };
 
   const handleBetInputChange = (e) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value)) {
-      setBetAmount(formatBetAmount(Math.max(0.1, Math.min(value, balance))));
+      const newAmount = Math.max(0.1, Math.min(value, balance));
+      setBetAmount(parseFloat(newAmount.toFixed(1)));
     }
   };
 
@@ -203,24 +205,28 @@ const HorseFlip = () => {
 
           <div className="controls">
             <div className="bet-controls">
-              <button onClick={decreaseBet}>-</button>
+              <button type="button" onClick={decreaseBet}>-</button>
               <input 
                 type="number" 
-                value={betAmount.toFixed(1)} // Format display to 1 decimal
+                value={betAmount.toFixed(1)}
                 onChange={handleBetInputChange}
                 step="0.1"
+                min="0.1"
+                max={balance}
               />
-              <button onClick={increaseBet}>+</button>
+              <button type="button" onClick={increaseBet}>+</button>
             </div>
 
             <div className="side-selection">
               <button 
+                type="button"
                 className={selectedSide === 'heads' ? 'selected' : ''} 
                 onClick={() => setSelectedSide('heads')}
               >
                 Heads 🐎
               </button>
               <button 
+                type="button"
                 className={selectedSide === 'tails' ? 'selected' : ''} 
                 onClick={() => setSelectedSide('tails')}
               >
@@ -230,8 +236,9 @@ const HorseFlip = () => {
 
             <button 
               className="flip-button" 
-              onClick={flip} 
-              disabled={isFlipping || betAmount > balance}
+              onClick={flip}
+              type="button"
+              disabled={isFlipping || betAmount > balance || !walletAddress}
             >
               FLIP!
             </button>
