@@ -208,12 +208,15 @@ const HorseRace = () => {
       .slice(0, 5); // Top 5 horses
   };
 
-  // Add scroll function
+  // Update the scroll function to target the degen button
   const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth'
-    });
+    const degenButton = document.querySelector('.degen-button-container');
+    if (degenButton) {
+      degenButton.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'center'
+      });
+    }
   };
 
   if (!isRaceStarted) {
@@ -324,8 +327,16 @@ const HorseRace = () => {
         </div>
 
         <div className="degen-pointer-container">
-          <div className="degen-pointer" onClick={scrollToBottom}>⬇️</div>
-          <div className="pointer-text">SCROLL DOWN TO FLIP THE HORSE FOR SOLANA! 🐎 💰</div>
+          <div 
+            className="degen-pointer" 
+            onClick={scrollToBottom}
+            style={{ cursor: 'pointer' }}
+          >
+            ⬇️
+          </div>
+          <div className="pointer-text">
+            DEGEN! 🐎 💰
+          </div>
           {[...Array(5)].map((_, i) => (
             <div
               key={i}
