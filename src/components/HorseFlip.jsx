@@ -101,6 +101,16 @@ const HorseFlip = () => {
     }
 
     try {
+      // Calculate total amount needed including fees
+      const transactionFee = 0.000005 * LAMPORTS_PER_SOL; // 0.000005 SOL for fees
+      const totalNeeded = (betAmount * LAMPORTS_PER_SOL) + transactionFee;
+      const currentBalance = await CONNECTION.getBalance(new PublicKey(walletAddress));
+
+      if (currentBalance < totalNeeded) {
+        alert('Insufficient balance (including transaction fees). Please reduce bet amount.');
+        return;
+      }
+
       setIsFlipping(true);
       setIsTransactionPending(true);
 
@@ -226,7 +236,7 @@ const HorseFlip = () => {
                 className={selectedSide === 'heads' ? 'selected' : ''} 
                 onClick={() => setSelectedSide('heads')}
               >
-                Heads 🐎
+                Heads ����
               </button>
               <button 
                 type="button"
