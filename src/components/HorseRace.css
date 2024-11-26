@@ -37,6 +37,12 @@ body {
   margin-bottom: 30px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.race-container::-webkit-scrollbar {
+  display: none;
 }
 
 .track {
@@ -218,6 +224,12 @@ body {
   border: none;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mile-markers-container::-webkit-scrollbar {
+  display: none;
 }
 
 .mile-markers {
@@ -759,6 +771,12 @@ body {
     padding: 10px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .race-container::-webkit-scrollbar {
+    display: none;
   }
 
   .track {
@@ -804,13 +822,16 @@ body {
   }
 
   .mile-markers-container {
+    width: 95%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    width: 95%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .mile-markers {
     min-width: 1400px;
+    position: relative;
   }
 
   .finish-line {
