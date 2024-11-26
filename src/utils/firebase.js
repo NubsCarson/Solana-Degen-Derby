@@ -4,14 +4,14 @@ import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'fire
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB9NISAVaXOWlF2qLcq__Q0PQoaIWGfO8A",
-  authDomain: "horse-race-tracker.firebaseapp.com",
-  databaseURL: "https://horse-race-tracker-default-rtdb.firebaseio.com",
-  projectId: "horse-race-tracker",
-  storageBucket: "horse-race-tracker.firebasestorage.app",
-  messagingSenderId: "333504999228",
-  appId: "1:333504999228:web:b1b6adab7cee068cd53839",
-  measurementId: "G-K5N1ZDE33C"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
