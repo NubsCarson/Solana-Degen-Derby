@@ -83,8 +83,15 @@ const HorseFlip = () => {
       return;
     }
 
-    if (betAmount > balance) {
-      alert('Insufficient balance');
+    // Convert both values to lamports for accurate comparison
+    const betLamports = betAmount * LAMPORTS_PER_SOL;
+    const balanceLamports = balance * LAMPORTS_PER_SOL;
+
+    // Add a buffer for transaction fees (0.000005 SOL)
+    const transactionFee = 0.000005 * LAMPORTS_PER_SOL;
+
+    if (betLamports + transactionFee > balanceLamports) {
+      alert('Insufficient balance (including transaction fees)');
       return;
     }
 
