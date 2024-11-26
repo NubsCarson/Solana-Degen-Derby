@@ -13,6 +13,7 @@ import horse7Svg from '../assets/horses/horse7.svg';
 import horse8Svg from '../assets/horses/horse8.svg';
 import horse9Svg from '../assets/horses/horse9.svg';
 import horse10Svg from '../assets/horses/horse10.svg';
+import Chat from './Chat';
 
 const FINISH_LINE_MCAP = 100000000; // 100 million
 const TRACK_LENGTH = 1400; // pixels (increased from 1200)
@@ -204,6 +205,10 @@ const HorseRace = () => {
   };
 
   const calculateHorsePosition = (marketCap) => {
+    if (marketCap >= FINISH_LINE_MCAP) {
+      // Return the finish line position minus a small offset to keep the horse visible
+      return TRACK_LENGTH - 200;  // 200px from the right edge
+    }
     return START_POSITION + ((marketCap / FINISH_LINE_MCAP) * (TRACK_LENGTH - START_POSITION));
   };
 
@@ -233,14 +238,34 @@ const HorseRace = () => {
     return (
       <div className="start-screen">
         <button className="start-button" onClick={startRace}>
-          🏁 START RACE 🏁
+          🏁 ENTER RACE 🏁
         </button>
       </div>
     );
   }
 
   if (loading && !Object.keys(marketCaps).length) {
-    return <div className="loading">Loading race data...</div>;
+    return (
+      <div className="epic-loading-screen">
+        <div className="loading-track">
+          <div className="loading-horse-container">
+            <img src={horse1Svg} alt="Loading Horse" className="loading-horse" />
+          </div>
+        </div>
+        <div className="loading-text">
+          <span>L</span>
+          <span>O</span>
+          <span>A</span>
+          <span>D</span>
+          <span>I</span>
+          <span>N</span>
+          <span>G</span>
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -250,16 +275,26 @@ const HorseRace = () => {
           <div className="online-dot"></div>
           Degens Online: {onlineUsers}
         </div>
-        <div className="wallet-connect">
-          {!walletAddress ? (
-            <button onClick={connectWallet}>
-              Connect Phantom
-            </button>
-          ) : (
-            <span className="wallet-address">
-              {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
-            </span>
-          )}
+        
+        <div className="site-title">Solana Degen Derby</div>
+        
+        <div className="header-right">
+          <div className="header-social-links">
+            <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
+          </div>
+          <div className="wallet-connect">
+            {!walletAddress ? (
+              <button onClick={connectWallet}>
+                Connect Phantom
+              </button>
+            ) : (
+              <span className="wallet-address">
+                {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
+              </span>
+            )}
+          </div>
         </div>
       </div>
       
@@ -306,15 +341,16 @@ const HorseRace = () => {
                     </div>
                   </div>
                 </div>
-                <div 
-                  className={`horse ${hasFinished ? 'finished' : ''}`}
-                  style={{
-                    left: `${position}px`,
-                    background: horse.gradient,
-                    transform: 'scaleX(-1)'
-                  }}
-                >
-                  <img src={horse.image} alt={horse.name} className="horse-svg" />
+                <div className="horse-wrapper" style={{ left: `${position}px` }}>
+                  <div 
+                    className={`horse ${hasFinished ? 'finished' : ''}`}
+                    style={{
+                      background: horse.gradient,
+                      transform: 'scaleX(-1)'
+                    }}
+                  >
+                    <img src={horse.image} alt={horse.name} className="horse-svg" />
+                  </div>
                   {hasFinished && <div className="winner-crown">👑</div>}
                 </div>
               </div>
@@ -324,7 +360,7 @@ const HorseRace = () => {
 
         {/* Leaderboard stays at bottom */}
         <div className="leaderboard">
-          <h2>🏆 Leaderboard</h2>
+          <h2> Leaderboard</h2>
           <div className="leaderboard-list">
             {getLeaderboard().map((horse, index) => (
               <div key={horse.name} className="leaderboard-item">
@@ -400,6 +436,7 @@ const HorseRace = () => {
           <a href="https://dexscreener.com/solana" target="_blank" rel="noopener noreferrer">DexScreener</a>
         </div>
       </div>
+      <Chat />
     </>
   );
 };
