@@ -51,7 +51,7 @@ const HorseFlip = () => {
       setWalletAddress(resp.publicKey.toString());
     } catch (err) {
       console.error('Error connecting wallet:', err);
-      alert('Please make sure you are on Devnet network');
+      alert('Please make sure you are on Solana Mainnet');
     }
   };
 
