@@ -1,11 +1,11 @@
 
 # NIGGA NUBS EASY INSTALL: 
 
-###run `npm install`
+### run `npm install`
 
 then
 
-###run `npm start`
+### run `npm start`
 
 any errors ask ai
 
