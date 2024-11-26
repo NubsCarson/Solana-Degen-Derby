@@ -1,7 +1,12 @@
 
-NIGGA NUBS EASY INSTALL: 
-run `npm install`
-run `npm start`
+# NIGGA NUBS EASY INSTALL: 
+
+###run `npm install`
+
+then
+
+###run `npm start`
+
 any errors ask ai
 
 
