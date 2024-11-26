@@ -297,7 +297,7 @@ body {
 .finish-text {
   position: absolute;
   right: -70px;
-  top: 10px;
+  top: -40px;
   transform: none;
   color: #ff0000;
   font-size: 10px;
