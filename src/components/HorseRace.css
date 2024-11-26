@@ -141,7 +141,7 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
   animation: gallop 0.8s infinite;
   border-radius: 50%;
-  z-index: 3;
+  z-index: 4;
   transform: scaleX(-1);
 }
 
@@ -226,7 +226,8 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   display: block;
-  z-index: 2;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .mile-markers-container::-webkit-scrollbar {
@@ -251,11 +252,12 @@ body {
 
 .marker-line {
   position: absolute;
-  height: 100%;
+  height: 86px;
   width: 2px;
   background: rgba(255, 255, 255, 0.2);
   top: 0;
-  z-index: 1;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .marker-label {
@@ -278,7 +280,7 @@ body {
   position: absolute;
   right: 150px;
   top: 0;
-  height: 100%;
+  height: 86px;
   width: 5px;
   background: repeating-linear-gradient(
     45deg,
@@ -288,7 +290,8 @@ body {
     #ff0000 20px
   );
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 5;
+  pointer-events: none;
 }
 
 .finish-text {
