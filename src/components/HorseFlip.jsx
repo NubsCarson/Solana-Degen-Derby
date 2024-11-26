@@ -6,9 +6,9 @@ import './HorseFlip.css';
 import { Buffer } from 'buffer';
 window.Buffer = Buffer;
 
-const NETWORK = 'devnet';
+const NETWORK = 'mainnet-beta';
 const CONNECTION = new Connection(
-    'https://api.devnet.solana.com',
+    'https://api.mainnet-beta.solana.com',
     'confirmed'
 );
 const LAMPORTS_PER_SOL = 1000000000;
