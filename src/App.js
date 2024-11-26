@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HorseRace from './components/HorseRace';
+import Menu from './components/Menu';
+import HorseFlip from './components/HorseFlip';
+import ChatRoom from './components/ChatRoom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HorseRace />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/flip" element={<HorseFlip />} />
+          <Route path="/chat" element={<ChatRoom />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

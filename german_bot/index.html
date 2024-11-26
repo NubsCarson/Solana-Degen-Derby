@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frogo Coin Flip 🐸</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/wallet-adapter-phantom@latest/lib/index.iife.min.js"></script>
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script>
+        window.Buffer = buffer.Buffer;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FROGO FLIP 🐸</h1>
+            <div class="wallet-info">
+                <button id="connect-wallet">Connect Phantom</button>
+                <div id="network-badge" class="testnet-badge">Devnet</div>
+                <div id="balance" class="hidden">Balance: 0 SOL</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="flip-container">
+                <div class="coin-display">
+                    <div class="coin">
+                        <div class="front">🐸</div>
+                        <div class="back">fly</div>
+                    </div>
+                </div>
+
+                <div class="betting-controls">
+                    <div class="bet-amount">
+                        <label>Bet Amount (SOL)</label>
+                        <input type="number" id="bet-input" min="0.001" step="0.001" value="0.001">
+                        <div class="quick-amounts">
+                            <button>0.01</button>
+                            <button>0.05</button>
+                            <button>0.1</button>
+                            <button>MAX</button>
+                        </div>
+                    </div>
+
+                    <div class="choice-buttons">
+                        <button class="choice-btn" id="choose-frog">
+                            <span class="emoji">🐸</span>
+                            <span>Frog</span>
+                        </button>
+                        <button class="choice-btn" id="choose-fly">
+                            <span class="emoji">fly</span>
+                            <span>Fly</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-flips">
+                <h2>Recent Flips</h2>
+                <div class="flip-history">
+                    <!-- Flip history will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="trading-section">
+                <h2>Token Trading</h2>
+                
+                <div class="create-trade">
+                    <h3>Create Trade</h3>
+                    <div class="trade-inputs">
+                        <div class="token-input">
+                            <label>Token Mint Address</label>
+                            <input type="text" id="token-mint" placeholder="Token mint address">
+                            <label>Amount of SOL to Trade</label>
+                            <input type="number" id="sol-amount" min="0" step="0.001">
+                        </div>
+                    </div>
+                    <button id="create-trade-btn">Create Trade</button>
+                </div>
+
+                <div class="trade-listings">
+                    <h3>Active Trades</h3>
+                    <div id="trade-list">
+                        <!-- Trade listings will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 

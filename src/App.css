@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background: linear-gradient(
+    to bottom,
+    #000000,
+    #1a0f3c
+  );
+  min-height: 100vh;
+  padding: 20px;
+  color: #fff;
 }
 
 .App-logo {
@@ -34,5 +42,22 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.App h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  margin-bottom: 40px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  }
+  to {
+    text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00, 0 0 30px #00ff00;
   }
 }
