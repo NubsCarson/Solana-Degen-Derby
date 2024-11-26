@@ -8,7 +8,7 @@ window.Buffer = Buffer;
 
 const NETWORK = 'mainnet-beta';
 const CONNECTION = new Connection(
-    'https://api.mainnet-beta.solana.com',
+    'https://misty-dimensional-film.solana-mainnet.quiknode.pro/a3fd984b10004b15fa8782cc8801d1fddf39cf40',
     'confirmed'
 );
 const LAMPORTS_PER_SOL = 1000000000;

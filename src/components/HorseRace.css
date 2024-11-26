@@ -669,49 +669,9 @@ body {
   }
 }
 
-.degen-button::after {
-  content: '🎰';
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  animation: spinEmoji 2s linear infinite;
-}
-
+.degen-button::after,
 .degen-button::before {
-  content: '💰';
-  position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  animation: spinEmoji 2s linear infinite reverse;
-}
-
-@keyframes spinEmoji {
-  0% { transform: translateY(-50%) rotate(0deg); }
-  100% { transform: translateY(-50%) rotate(360deg); }
-}
-
-.degen-button::before,
-.degen-button::after {
-  font-size: 32px;
-}
-
-.degen-button::before {
-  content: '🎰 💸 🚀';
-  right: -120px;
-}
-
-.degen-button::after {
-  content: '🎲 💰 🔥';
-  left: -120px;
-}
-
-@keyframes floatEmoji {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  display: none;
 }
 
 .money-emoji {
@@ -719,6 +679,11 @@ body {
   font-size: 24px;
   pointer-events: none;
   animation: floatEmoji 2s ease-out infinite;
+}
+
+@keyframes floatEmoji {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
 .header {

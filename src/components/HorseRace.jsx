@@ -99,7 +99,7 @@ const formatMarketCap = (marketCap) => {
 };
 
 const CONNECTION = new Connection(
-    'https://api.mainnet-beta.solana.com',
+    'https://misty-dimensional-film.solana-mainnet.quiknode.pro/a3fd984b10004b15fa8782cc8801d1fddf39cf40',
     'confirmed'
 );
 
