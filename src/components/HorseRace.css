@@ -782,7 +782,7 @@ body {
 
   .track {
     min-width: 1400px;
-    padding-left: 200px;
+    padding-left: 140px;
     padding-right: 200px;
   }
 
@@ -834,6 +834,43 @@ body {
 
   .horse {
     max-width: none;
+  }
+
+  .horse-info {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 120px;
+  }
+
+  .horse-name {
+    font-size: 8px;
+    padding: 4px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .market-cap {
+    font-size: 8px;
+    padding: 4px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .track {
+    min-width: 1400px;
+    padding-left: 140px;
+    padding-right: 200px;
+  }
+
+  .horse {
+    font-size: 28px;
+    width: 46px;
+    height: 46px;
   }
 }
  
