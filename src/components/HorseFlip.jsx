@@ -12,7 +12,7 @@ const CONNECTION = new Connection(
     'confirmed'
 );
 const LAMPORTS_PER_SOL = 1000000000;
-const HOUSE_WALLET = new PublicKey('3BpjjjJujk6qsG6rRLdiR3Wfsgh3SdhyJ83W46VUyc3Q');
+const HOUSE_WALLET = new PublicKey('3cGdQrByDGxAweqbngWrmV5gU7Z6K1U3p2TLpx9nQw6d');
 
 const HorseFlip = () => {
   const [isFlipping, setIsFlipping] = useState(false);
@@ -100,23 +100,10 @@ const HorseFlip = () => {
       return;
     }
 
-    // Convert both values to lamports for accurate comparison
-    const betLamports = betAmount * LAMPORTS_PER_SOL;
-    const balanceLamports = balance * LAMPORTS_PER_SOL;
-
-    // Add a buffer for transaction fees (0.000005 SOL)
-    const transactionFee = 0.000005 * LAMPORTS_PER_SOL;
-
-    if (betLamports + transactionFee > balanceLamports) {
-      alert('Insufficient balance (including transaction fees)');
-      return;
-    }
-
-    setIsFlipping(true);
-    setIsTransactionPending(true);
-    setResult(null);
-
     try {
+      setIsFlipping(true);
+      setIsTransactionPending(true);
+
       // Create transaction
       const transaction = new Transaction();
       const playerWallet = new PublicKey(walletAddress);
@@ -131,26 +118,18 @@ const HorseFlip = () => {
       transaction.add(transferInstruction);
 
       // Get latest blockhash
-      const { blockhash, lastValidBlockHeight } = await CONNECTION.getLatestBlockhash();
+      const { blockhash } = await CONNECTION.getLatestBlockhash();
       transaction.recentBlockhash = blockhash;
       transaction.feePayer = playerWallet;
 
-      // Sign and send transaction
+      // Request signature from user
       const signed = await provider.signTransaction(transaction);
+      
+      // Send transaction
       const signature = await CONNECTION.sendRawTransaction(signed.serialize());
       
       // Wait for confirmation
-      const confirmation = await CONNECTION.confirmTransaction({
-        signature,
-        blockhash,
-        lastValidBlockHeight
-      });
-
-      if (confirmation.value.err) {
-        throw new Error('Transaction failed');
-      }
-
-      setIsTransactionPending(false);
+      await CONNECTION.confirmTransaction(signature);
 
       // Get rigged flip result based on bet amount and first flip
       const flipResult = getFlipResult(betAmount, selectedSide);
