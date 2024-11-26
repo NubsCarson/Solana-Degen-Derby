@@ -381,7 +381,14 @@ const HorseRace = () => {
       </div>
 
       <div className="footer">
-        Solana Degen Derby © 2024 All Rights Reserved
+        <p>Solana Degen Derby © 2024 All Rights Reserved</p>
+        <div className="social-links">
+          <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">Pump.fun</a>
+          <a href="https://dexscreener.com/solana" target="_blank" rel="noopener noreferrer">DexScreener</a>
+        </div>
       </div>
     </>
   );
