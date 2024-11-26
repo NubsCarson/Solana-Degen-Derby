@@ -422,6 +422,12 @@ body {
   margin-top: 20px;
   max-height: 400px;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.leaderboard-list::-webkit-scrollbar {
+  display: none;
 }
 
 .leaderboard-item {
