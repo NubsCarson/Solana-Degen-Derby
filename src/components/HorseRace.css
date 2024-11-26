@@ -20,6 +20,7 @@ body {
 }
 
 .race-container {
+  position: relative;
   width: 95vw;
   max-width: 1600px;
   background: linear-gradient(
@@ -28,7 +29,6 @@ body {
     rgba(26, 15, 60, 0.9)
   );
   padding: 23px;
-  position: relative;
   margin: 0;
   font-family: 'Press Start 2P', cursive;
   border: 2px solid #00ff00;
@@ -46,9 +46,9 @@ body {
 }
 
 .track {
+  position: relative;
   height: 86px;
   border-bottom: 2px dashed #1e4d1e;
-  position: relative;
   margin-bottom: 20px;
   background: linear-gradient(
     to right,
@@ -141,7 +141,7 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
   animation: gallop 0.8s infinite;
   border-radius: 50%;
-  z-index: 90;
+  z-index: 900;
   transform: scaleX(-1);
 }
 
@@ -215,10 +215,10 @@ body {
 }
 
 .mile-markers-container {
+  position: relative;
   width: 95vw;
   max-width: 1600px;
   height: 40px;
-  position: relative;
   margin-bottom: -2px;
   padding: 5px 23px;
   background: transparent;
@@ -226,7 +226,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   display: block;
-  z-index: 100;
+  z-index: 1000;
   pointer-events: none;
 }
 
@@ -255,8 +255,8 @@ body {
   height: 86px;
   width: 2px;
   background: rgba(255, 255, 255, 0.5);
-  top: 0;
-  z-index: 100;
+  top: 23px;
+  z-index: 1000;
   pointer-events: none;
 }
 
@@ -279,7 +279,7 @@ body {
 .finish-line {
   position: absolute;
   right: 150px;
-  top: 0;
+  top: 23px;
   height: 86px;
   width: 5px;
   background: repeating-linear-gradient(
@@ -290,7 +290,7 @@ body {
     #ff0000 20px
   );
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  z-index: 100;
+  z-index: 1000;
   pointer-events: none;
 }
 
