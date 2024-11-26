@@ -172,4 +172,56 @@ button.selected {
 
 .coin.continuous-flip {
   animation: continuous-flip 1s linear infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .horse-flip-container {
+    padding: 10px;
+  }
+
+  .horse-flip-container h1 {
+    font-size: 18px;
+  }
+
+  .wallet-info {
+    font-size: 12px;
+  }
+
+  .coin-container {
+    height: 150px;
+  }
+
+  .coin {
+    width: 100px;
+    height: 100px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bet-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bet-controls input {
+    width: 80px;
+  }
+
+  .side-selection {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .side-selection button {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .flip-button {
+    width: 100%;
+    font-size: 18px;
+  }
 } 

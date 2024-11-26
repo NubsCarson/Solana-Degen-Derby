@@ -742,4 +742,58 @@ body {
   font-size: 9px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .race-wrapper {
+    padding-top: 60px;
+    width: 100%;
+  }
+
+  .race-container {
+    width: 95%;
+    padding: 10px;
+    overflow-x: scroll;
+  }
+
+  .track {
+    min-width: 800px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .online-counter {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .wallet-connect {
+    font-size: 8px;
+    padding: 5px 10px;
+  }
+
+  .leaderboard {
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .degen-pointer-container {
+    right: 10px;
+    bottom: 70px;
+    width: 150px;
+    padding: 10px;
+  }
+
+  .pointer-text {
+    font-size: 10px;
+  }
+
+  .degen-button {
+    font-size: 14px;
+    padding: 15px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
  
