@@ -60,6 +60,7 @@ body {
   padding-left: 200px;
   min-width: 1400px;
   width: 100%;
+  z-index: 1;
 }
 
 .track:hover {
@@ -225,6 +226,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   display: block;
+  z-index: 2;
 }
 
 .mile-markers-container::-webkit-scrollbar {
@@ -249,10 +251,10 @@ body {
 
 .marker-line {
   position: absolute;
-  height: 1100px;
+  height: 100%;
   width: 2px;
   background: rgba(255, 255, 255, 0.2);
-  top: 70px;
+  top: 0;
   z-index: 1;
 }
 
@@ -275,8 +277,8 @@ body {
 .finish-line {
   position: absolute;
   right: 150px;
-  top: 50px;
-  height: 1100px;
+  top: 0;
+  height: 100%;
   width: 5px;
   background: repeating-linear-gradient(
     45deg,
@@ -286,7 +288,7 @@ body {
     #ff0000 20px
   );
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 .finish-text {
