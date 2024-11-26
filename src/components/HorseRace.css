@@ -226,7 +226,7 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   display: block;
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
 }
 
@@ -252,12 +252,13 @@ body {
 
 .marker-line {
   position: absolute;
-  height: 86px;
+  height: 100%;
   width: 2px;
   background: rgba(255, 255, 255, 0.2);
   top: 0;
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
+  bottom: 0;
 }
 
 .marker-label {
@@ -280,7 +281,7 @@ body {
   position: absolute;
   right: 150px;
   top: 0;
-  height: 86px;
+  height: 100%;
   width: 5px;
   background: repeating-linear-gradient(
     45deg,
@@ -290,8 +291,9 @@ body {
     #ff0000 20px
   );
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-  z-index: 5;
+  z-index: 10;
   pointer-events: none;
+  bottom: 0;
 }
 
 .finish-text {
