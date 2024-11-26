@@ -3,6 +3,16 @@ import { Connection, PublicKey } from '@solana/web3.js';
 import { getTokenMarketCap } from '../utils/tokenUtils';
 import './HorseRace.css';
 import { database, ref, onValue, set, onDisconnect } from '../utils/firebase';
+import horse1Svg from '../assets/horses/horse1.svg';
+import horse2Svg from '../assets/horses/horse2.svg';
+import horse3Svg from '../assets/horses/horse3.svg';
+import horse4Svg from '../assets/horses/horse4.svg';
+import horse5Svg from '../assets/horses/horse5.svg';
+import horse6Svg from '../assets/horses/horse6.svg';
+import horse7Svg from '../assets/horses/horse7.svg';
+import horse8Svg from '../assets/horses/horse8.svg';
+import horse9Svg from '../assets/horses/horse9.svg';
+import horse10Svg from '../assets/horses/horse10.svg';
 
 const FINISH_LINE_MCAP = 100000000; // 100 million
 const TRACK_LENGTH = 1400; // pixels (increased from 1200)
@@ -18,73 +28,73 @@ const MILESTONES = [
 
 const horses = [
   { 
-    name: '🏆 STALLION', 
+    name: '#1 HORSE', 
     tokenAddress: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v', // USDC
     color: '#FF5733',
-    image: '🐎',
+    image: horse1Svg,
     gradient: 'linear-gradient(45deg, #FF5733, #FF8C1A)'
   },
   { 
-    name: '⚡ THUNDER', 
+    name: '#2 HORSE', 
     tokenAddress: 'So11111111111111111111111111111111111111112', // SOL
     color: '#33FF57',
-    image: '🏇',
+    image: horse2Svg,
     gradient: 'linear-gradient(45deg, #33FF57, #33FFB5)'
   },
   { 
-    name: '💨 SWIFT', 
+    name: '#3 HORSE', 
     tokenAddress: 'mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So', // mSOL
     color: '#3357FF',
-    image: '🐎',
+    image: horse3Svg,
     gradient: 'linear-gradient(45deg, #3357FF, #33B5FF)'
   },
   { 
-    name: '🌟 STAR', 
+    name: '#4 HORSE', 
     tokenAddress: 'DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263', // BONK
     color: '#FF33F6',
-    image: '🏇',
+    image: horse4Svg,
     gradient: 'linear-gradient(45deg, #FF33F6, #FF33B5)'
   },
   { 
-    name: '🔥 BLAZE', 
+    name: '#5 HORSE', 
     tokenAddress: '7i5KKsX2weiTkry7jA4ZwSuXGhs5eJBEjY8vVxR4pfRx', // ORCA
     color: '#FFB533',
-    image: '🐎',
+    image: horse5Svg,
     gradient: 'linear-gradient(45deg, #FFB533, #FF5733)'
   },
   { 
-    name: '💫 COMET', 
+    name: '#6 HORSE', 
     tokenAddress: 'RLBxxFkseAZ4RgJH3Sqn8jXxhmGoz9jWxDNJMh8pL7a', // RAY
     color: '#33FFF6',
-    image: '🏇',
+    image: horse6Svg,
     gradient: 'linear-gradient(45deg, #33FFF6, #33B5FF)'
   },
   { 
-    name: '⭐ NOVA', 
+    name: '#7 HORSE', 
     tokenAddress: 'AFbX8oGjGpmVFywbVouvhQSRmiW2aR1mohfahi4Y2AdB', // GST
     color: '#FF3366',
-    image: '🐎',
+    image: horse7Svg,
     gradient: 'linear-gradient(45deg, #FF3366, #FF336F)'
   },
   { 
-    name: '🌈 RAINBOW', 
+    name: '#8 HORSE', 
     tokenAddress: 'MangoCzJ36AjZyKwVj3VnYU4GTonjfVEnJmvvWaxLac', // MNGO
     color: '#8833FF',
-    image: '🏇',
+    image: horse8Svg,
     gradient: 'linear-gradient(45deg, #8833FF, #FF33F6)'
   },
   { 
-    name: '✨ SPARK', 
+    name: '#9 HORSE', 
     tokenAddress: 'SRMuApVNdxXokk5GT7XD5cUUgXMBCoAz2LHeuAoKWRt', // SRM
     color: '#33FF99',
-    image: '🐎',
+    image: horse9Svg,
     gradient: 'linear-gradient(45deg, #33FF99, #33FFB5)'
   },
   { 
-    name: '🎯 ARROW', 
+    name: '#10 HORSE', 
     tokenAddress: 'StepAscQoEioFxxWGnh2sLBDFp9d8rvKz2Yp39iDpyT', // STEP
     color: '#FF9933',
-    image: '🏇',
+    image: horse10Svg,
     gradient: 'linear-gradient(45deg, #FF9933, #FFB533)'
   }
 ];
@@ -304,7 +314,7 @@ const HorseRace = () => {
                     transform: 'scaleX(-1)'
                   }}
                 >
-                  {horse.image}
+                  <img src={horse.image} alt={horse.name} className="horse-svg" />
                   {hasFinished && <div className="winner-crown">👑</div>}
                 </div>
               </div>
