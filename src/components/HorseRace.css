@@ -752,4 +752,31 @@ body {
   border-radius: 50%;
   animation: pulse 1.5s infinite;
 }
+
+.wallet-connect {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.wallet-connect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.wallet-address {
+  color: #00ff00;
+  font-size: 12px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
  

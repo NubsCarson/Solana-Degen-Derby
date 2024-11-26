@@ -110,6 +110,8 @@ const HorseRace = () => {
     start: null
   });
   const [onlineUsers, setOnlineUsers] = useState(0);
+  const [walletAddress, setWalletAddress] = useState(null);
+  const [provider, setProvider] = useState(null);
 
   const startRace = () => {
     setIsRaceStarted(true);
@@ -166,6 +168,26 @@ const HorseRace = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if ('solana' in window) {
+      setProvider(window.solana);
+    }
+  }, []);
+
+  const connectWallet = async () => {
+    try {
+      if (!provider) {
+        alert('Please install Phantom wallet');
+        return;
+      }
+      const resp = await provider.connect();
+      setWalletAddress(resp.publicKey.toString());
+    } catch (err) {
+      console.error('Error connecting wallet:', err);
+      alert('Please make sure you are on Devnet network');
+    }
+  };
+
   const calculateHorsePosition = (marketCap) => {
     return START_POSITION + ((marketCap / FINISH_LINE_MCAP) * (TRACK_LENGTH - START_POSITION));
   };
@@ -201,6 +223,17 @@ const HorseRace = () => {
         <div className="online-counter">
           <div className="online-dot"></div>
           Degens Online: {onlineUsers}
+        </div>
+        <div className="wallet-connect">
+          {!walletAddress ? (
+            <button onClick={connectWallet}>
+              Connect Phantom
+            </button>
+          ) : (
+            <span className="wallet-address">
+              {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
+            </span>
+          )}
         </div>
       </div>
       
