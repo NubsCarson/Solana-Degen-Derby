@@ -98,6 +98,11 @@ const formatMarketCap = (marketCap) => {
   return `$${marketCap.toFixed(2)}`;
 };
 
+const CONNECTION = new Connection(
+    'https://api.mainnet-beta.solana.com',
+    'confirmed'
+);
+
 const HorseRace = () => {
   const [marketCaps, setMarketCaps] = useState({});
   const [loading, setLoading] = useState(true);
@@ -184,7 +189,7 @@ const HorseRace = () => {
       setWalletAddress(resp.publicKey.toString());
     } catch (err) {
       console.error('Error connecting wallet:', err);
-      alert('Please make sure you are on Devnet network');
+      alert('Please make sure you are on Solana Mainnet');
     }
   };
 
@@ -201,6 +206,14 @@ const HorseRace = () => {
       .map(([name, cap]) => ({ name, cap }))
       .sort((a, b) => b.cap - a.cap)
       .slice(0, 5); // Top 5 horses
+  };
+
+  // Add scroll function
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
   };
 
   if (!isRaceStarted) {
@@ -311,7 +324,7 @@ const HorseRace = () => {
         </div>
 
         <div className="degen-pointer-container">
-          <div className="degen-pointer">⬇️</div>
+          <div className="degen-pointer" onClick={scrollToBottom}>⬇️</div>
           <div className="pointer-text">SCROLL DOWN TO FLIP THE HORSE FOR SOLANA! 🐎 💰</div>
           {[...Array(5)].map((_, i) => (
             <div
