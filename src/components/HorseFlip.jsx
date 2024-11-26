@@ -238,7 +238,7 @@ const HorseFlip = () => {
               className="flip-button" 
               onClick={flip}
               type="button"
-              disabled={isFlipping || betAmount > balance || !walletAddress}
+              disabled={isFlipping || !walletAddress}
             >
               FLIP!
             </button>
