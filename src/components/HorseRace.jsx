@@ -205,7 +205,7 @@ const HorseRace = () => {
     return Object.entries(marketCaps)
       .map(([name, cap]) => ({ name, cap }))
       .sort((a, b) => b.cap - a.cap)
-      .slice(0, 5); // Top 5 horses
+      .slice(0, 10); // Changed from 5 to 10 to show all horses
   };
 
   // Update the scroll function to target the degen button

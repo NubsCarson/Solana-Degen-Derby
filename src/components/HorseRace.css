@@ -399,13 +399,13 @@ body {
 
 .leaderboard {
   width: 95vw;
-  max-width: 1600px;
-  background: rgba(0, 0, 0, 0.9);
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
   border: 2px solid #00ff00;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
 .leaderboard h2 {
@@ -419,6 +419,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .leaderboard-item {
