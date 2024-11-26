@@ -787,7 +787,7 @@ body {
   }
 
   .mile-markers-container {
-    display: none;
+    display: none !important;
   }
 
   .header {
