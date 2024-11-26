@@ -41,6 +41,19 @@ const HorseFlip = () => {
     }
   }, [walletAddress]);
 
+  useEffect(() => {
+    if (walletAddress) {
+      // Initial balance update
+      updateBalance();
+
+      // Set up interval to update balance every 5 seconds
+      const balanceInterval = setInterval(updateBalance, 5000);
+
+      // Cleanup interval on unmount or when wallet disconnects
+      return () => clearInterval(balanceInterval);
+    }
+  }, [walletAddress]);
+
   const connectWallet = async () => {
     try {
       if (!provider) {
@@ -49,6 +62,10 @@ const HorseFlip = () => {
       }
       const resp = await provider.connect();
       setWalletAddress(resp.publicKey.toString());
+      
+      // Immediately update balance after connection
+      const balance = await CONNECTION.getBalance(resp.publicKey);
+      setBalance(balance / LAMPORTS_PER_SOL);
     } catch (err) {
       console.error('Error connecting wallet:', err);
       alert('Please make sure you are on Solana Mainnet');
