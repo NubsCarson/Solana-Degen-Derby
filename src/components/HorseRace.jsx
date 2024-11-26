@@ -379,6 +379,10 @@ const HorseRace = () => {
           </button>
         </div>
       </div>
+
+      <div className="footer">
+        Solana Degen Derby © 2024 All Rights Reserved
+      </div>
     </>
   );
 };
