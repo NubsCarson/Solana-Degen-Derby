@@ -156,25 +156,25 @@ const HorseFlip = () => {
     }
   };
 
-  // Update bet controls with proper formatting
+  // Fix the bet controls
   const increaseBet = () => {
     setBetAmount(prev => {
-      const newAmount = Math.min(prev + 0.1, balance);
-      return parseFloat(newAmount.toFixed(1));
+      const newAmount = prev + 0.1;
+      return parseFloat(Math.min(newAmount, balance || 0).toFixed(1));
     });
   };
 
   const decreaseBet = () => {
     setBetAmount(prev => {
-      const newAmount = Math.max(0.1, prev - 0.1);
-      return parseFloat(newAmount.toFixed(1));
+      const newAmount = prev - 0.1;
+      return parseFloat(Math.max(0.1, newAmount).toFixed(1));
     });
   };
 
   const handleBetInputChange = (e) => {
     const value = parseFloat(e.target.value);
     if (!isNaN(value)) {
-      const newAmount = Math.max(0.1, Math.min(value, balance));
+      const newAmount = Math.max(0.1, Math.min(value, balance || 0));
       setBetAmount(parseFloat(newAmount.toFixed(1)));
     }
   };
@@ -238,7 +238,7 @@ const HorseFlip = () => {
               className="flip-button" 
               onClick={flip}
               type="button"
-              disabled={isFlipping || !walletAddress}
+              disabled={isFlipping || !walletAddress || betAmount <= 0}
             >
               FLIP!
             </button>
