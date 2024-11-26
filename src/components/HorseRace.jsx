@@ -234,13 +234,67 @@ const HorseRace = () => {
     }
   };
 
+  const renderHeader = () => (
+    <div className="header">
+      <div className="online-counter">
+        <div className="online-dot"></div>
+        Degens Online: {onlineUsers}
+      </div>
+      
+      <div className="site-title">Solana Degen Derby</div>
+      
+      <div className="header-right">
+        <div className="header-social-links">
+          <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+        <div className="wallet-connect">
+          {!walletAddress ? (
+            <button onClick={connectWallet}>
+              Connect Phantom
+            </button>
+          ) : (
+            <span className="wallet-address">
+              {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
+            </span>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderFooter = () => (
+    <div className="footer">
+      <p>Solana Degen Derby © 2024 All Rights Reserved</p>
+      <div className="social-links">
+        <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">Pump.fun</a>
+        <a href="https://dexscreener.com/solana" target="_blank" rel="noopener noreferrer">DexScreener</a>
+      </div>
+    </div>
+  );
+
   if (!isRaceStarted) {
     return (
-      <div className="start-screen">
-        <button className="start-button" onClick={startRace}>
-          🏁 ENTER RACE 🏁
-        </button>
-      </div>
+      <>
+        {renderHeader()}
+        <div className="start-screen">
+          <div className="logo-container">
+            <img 
+              src="/images/logo1.png" 
+              alt="Solana Degen Derby Logo" 
+              className="enter-page-logo"
+            />
+          </div>
+          <button className="start-button" onClick={startRace}>
+            🏁 ENTER RACE 🏁
+          </button>
+        </div>
+        {renderFooter()}
+      </>
     );
   }
 
