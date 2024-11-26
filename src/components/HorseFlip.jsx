@@ -236,7 +236,7 @@ const HorseFlip = () => {
                 className={selectedSide === 'heads' ? 'selected' : ''} 
                 onClick={() => setSelectedSide('heads')}
               >
-                Heads 
+                Heads 🏇
               </button>
               <button 
                 type="button"
