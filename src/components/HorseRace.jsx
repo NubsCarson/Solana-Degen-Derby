@@ -142,7 +142,7 @@ const HorseRace = () => {
     };
 
     fetchMarketCaps();
-    const interval = setInterval(fetchMarketCaps, 5000);
+    const interval = setInterval(fetchMarketCaps, 10000);
     return () => clearInterval(interval);
   }, [isRaceStarted, winners]);
 

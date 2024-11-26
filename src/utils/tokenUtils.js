@@ -1,7 +1,7 @@
 import { Connection, PublicKey } from '@solana/web3.js';
 
 const JUPITER_PRICE_API = 'https://price.jup.ag/v4/price';
-const RPC_ENDPOINT = 'https://api.mainnet-beta.solana.com';
+const RPC_ENDPOINT = 'https://misty-dimensional-film.solana-mainnet.quiknode.pro/a3fd984b10004b15fa8782cc8801d1fddf39cf40';
 
 // Fixed SOL price for testing (update this periodically)
 const FIXED_SOL_PRICE = 100; // $100 USD
@@ -11,7 +11,8 @@ const cache = {
   timestamp: new Map()
 };
 
-const CACHE_DURATION = 30000; // 30 seconds
+// Increase cache duration to 10 seconds
+const CACHE_DURATION = 10000; // 10 seconds
 
 function normalizeMarketCap(marketCap) {
   const maxCap = 100000000;
