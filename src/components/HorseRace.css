@@ -1018,6 +1018,12 @@ body {
   border-top: 1px solid rgba(0, 255, 0, 0.3);
   padding: 20px 0;
   text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer.visible {
+  transform: translateY(0);
 }
 
 .social-links {

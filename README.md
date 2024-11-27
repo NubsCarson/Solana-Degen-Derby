@@ -1,17 +1,3 @@
-# https://www.solderby.fun
-# NIGGA NUBS EASY INSTALL: 
-
-### run `npm install`
-
-then
-
-### run `npm start`
-
-any errors ask ai
-
-
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

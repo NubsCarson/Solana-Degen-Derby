@@ -18,6 +18,7 @@ import Chat from './Chat';
 const FINISH_LINE_MCAP = 100000000; // 100 million
 const TRACK_LENGTH = 1400; // pixels (increased from 1200)
 const START_POSITION = 200; // pixels (stays the same)
+const SCROLL_THRESHOLD = 100; // pixels to scroll before showing footer
 
 const MILESTONES = [
   { cap: 1000000, label: '1M' },
@@ -128,6 +129,7 @@ const HorseRace = () => {
   const [onlineUsers, setOnlineUsers] = useState(0);
   const [walletAddress, setWalletAddress] = useState(null);
   const [provider, setProvider] = useState(null);
+  const [showFooter, setShowFooter] = useState(false);
 
   const startRace = () => {
     setIsRaceStarted(true);
@@ -188,6 +190,16 @@ const HorseRace = () => {
     if ('solana' in window) {
       setProvider(window.solana);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setShowFooter(scrollPosition > SCROLL_THRESHOLD);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const connectWallet = async () => {
@@ -293,7 +305,9 @@ const HorseRace = () => {
             🏁 ENTER RACE 🏁
           </button>
         </div>
-        {renderFooter()}
+        <footer className={`footer ${showFooter ? 'visible' : ''}`}>
+          {renderFooter()}
+        </footer>
       </>
     );
   }
@@ -480,7 +494,7 @@ const HorseRace = () => {
         </div>
       </div>
 
-      <div className="footer">
+      <footer className={`footer ${showFooter ? 'visible' : ''}`}>
         <p>Solana Degen Derby © 2024 All Rights Reserved</p>
         <div className="social-links">
           <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
@@ -489,7 +503,7 @@ const HorseRace = () => {
           <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">Pump.fun</a>
           <a href="https://dexscreener.com/solana" target="_blank" rel="noopener noreferrer">DexScreener</a>
         </div>
-      </div>
+      </footer>
       <Chat />
     </>
   );
