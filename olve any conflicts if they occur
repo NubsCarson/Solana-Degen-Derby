@@ -1,0 +1,62 @@
+* [33m667a18b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Updated Firebase configuration and fixed chat components
+[31m|[m *   [33m19d28e8[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branch 'main' of https://github.com/SOLXMR/solderby
+[31m|[m [32m|[m[33m\[m  
+[31m|[m [32m|[m * [33m7744887[m Update README.md
+[31m|[m [32m|[m * [33m7a64504[m Update README.md
+[31m|[m [32m|[m[31m/[m  
+[31m|[m[31m/[m[32m|[m   
+[31m|[m * [33mab5d5ed[m Your commit message here
+[31m|[m[31m/[m  
+* [33m8dd9f7f[m Update UI: Add logo to enter page, fix scrolling issues, enhance loading animation
+* [33m5e365ee[m Update README.md
+* [33m80f395e[m Update README.md
+* [33m3fd7c45[m Update README.md
+* [33m94885f8[m Update README.md
+* [33m6a0f809[m Add chat component and update horse race styling
+* [33m967e853[m Update horse SVG styling and add social links to footer
+* [33m4ce2679[m Add social media links to footer
+* [33mc3fb2d8[m Updated race track styling, fixed finish text positioning and mile markers
+* [33mb3e5839[m Updated finish text positioning and race track styling
+* [33mb1e45f5[m Added copyright footer and updated race track styling
+* [33ma36e690[m Fixed mile markers and finish line text positioning, updated race track styling
+* [33m455eccf[m Updated leaderboard scrollbar and race track styling
+* [33me11d88d[m Updated HorseRace component with all 10 horses in leaderboard, fixed mile markers and finish line visibility
+* [33m5315eab[m Fixed finish text positioning and visibility, updated race track styling
+* [33ma589a44[m Fixed mile markers and finish line visibility, updated z-index and styling for race track
+* [33mc9ba40b[m Fixed mile markers and finish line visibility, updated z-index and styling for race track
+* [33m34f249a[m Fixed marker lines and finish line visibility, updated z-index and styling
+* [33ma5c70af[m Fixed mile markers and finish line visibility, updated marker line styles
+* [33m55793b4[m Fixed mile markers and finish line visibility, updated z-index and styling
+* [33m6b751f2[m Fixed mile markers and finish line visibility, updated mobile layout
+* [33m3de4478[m Fixed mile markers visibility and mobile layout issues
+* [33m56c50a5[m Fixed mobile layout, restored mile markers for desktop, improved mobile responsiveness
+* [33m3f5e884[m Fixed mobile layout for horse names and market caps, improved visibility
+* [33m2cb2f95[m Fixed mobile layout, removed mile markers on mobile, improved scrolling and visibility
+* [33m9319e64[m Updated mobile responsiveness for HorseRace and HorseFlip components
+* [33ma0a3ff8[m Updated mobile responsiveness for HorseRace and HorseFlip components
+* [33m7e97b4c[m Updated mobile responsiveness for HorseRace and HorseFlip components
+* [33me5c82be[m Updated HorseFlip with rigged outcomes, updated environment variables and meta tags
+* [33mf24efe0[m Updated HorseFlip with same emoji on both sides, fixed environment variables and meta tags
+* [33m5b3c751[m Updated HorseFlip with same emoji on both sides, updated environment variables
+* [33mf8be6a3[m Updated environment variables, fixed transaction handling, and updated meta tags
+* [33me576fad[m Updated HorseFlip with proper transaction handling and mainnet support
+* [33mfa723f1[m Updated RPC endpoints, removed spinning emojis, updated meta tags and firebase config
+* [33m5786a44[m Updated RPC endpoint to QuickNode and fixed update intervals
+* [33mba0602f[m Updated degen pointer text and fixed scroll functionality
+* [33m1648bb4[m Updated scroll pointer size and functionality, added mainnet support
+* [33m0728898[m Fixed HorseFlip betting controls and balance updates, updated to mainnet
+* [33mf81ee8a[m Fixed HorseFlip betting controls and updated mainnet connection
+* [33mbeb8dcf[m Fixed HorseFlip betting controls and updated mainnet connection
+* [33m84af2aa[m Fixed HorseFlip betting controls and updated mainnet connection
+* [33mc68e1e3[m Fixed HorseFlip betting controls and updated mainnet connection
+* [33m9799a29[m Fixed HorseFlip betting controls and updated mainnet connection
+* [33m3488084[m Updated to mainnet, resized wallet button, updated meta tags
+* [33mc80355a[m Added wallet connect button to header and updated styling
+* [33m219c124[m Updated image paths and added cache busting
+* [33m158e559[m Updated meta tags with absolute URLs for social media embeds
+* [33m0ff4446[m Updated meta tags and social media embeds, added environment variables
+* [33m3df9f59[m Updated meta tags and social media embeds, added environment variables
+* [33m5770fb3[m Updated site title to Solana Degen Derby and added environment variables
+* [33m32d2997[m Updated firebase config to use environment variables
+* [33mdd0c881[m Initial commit - Horse Race Tracker
+* [33m3b14684[m Initialize project using Create React App
