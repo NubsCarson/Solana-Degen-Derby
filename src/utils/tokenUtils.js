@@ -1,7 +1,7 @@
 import { Connection, PublicKey } from '@solana/web3.js';
 
 const JUPITER_PRICE_API = 'https://price.jup.ag/v4/price';
-const RPC_ENDPOINT = 'https://misty-dimensional-film.solana-mainnet.quiknode.pro/a3fd984b10004b15fa8782cc8801d1fddf39cf40';
+const RPC_ENDPOINT = 'https://api.mainnet-beta.solana.com';
 
 // Fixed SOL price for testing (update this periodically)
 const FIXED_SOL_PRICE = 100; // $100 USD

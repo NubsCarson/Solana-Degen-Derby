@@ -3,13 +3,13 @@ import { getDatabase, ref, onValue, push, set, onDisconnect } from 'firebase/dat
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL
+  apiKey: "AIzaSyDZOxEFxXvxBVOPTp4RaQzqWEVJnU-YVQM",
+  authDomain: "solana-degen-derby.firebaseapp.com",
+  projectId: "solana-degen-derby",
+  storageBucket: "solana-degen-derby.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abcdef1234567890",
+  databaseURL: "https://solana-degen-derby-default-rtdb.firebaseio.com"
 };
 
 // Initialize Firebase
