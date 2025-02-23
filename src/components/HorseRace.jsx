@@ -257,9 +257,9 @@ const HorseRace = () => {
       
       <div className="header-right">
         <div className="header-social-links">
-          <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
-          <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://discord.gg/pumpdotfun" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://t.me/ChillWeb3Dev" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://x.com/nubsDev" target="_blank" rel="noopener noreferrer">Twitter</a>
         </div>
         <div className="wallet-connect">
           {!walletAddress ? (
@@ -280,7 +280,7 @@ const HorseRace = () => {
     <div className="footer">
       <p>Solana Degen Derby © 2024 All Rights Reserved</p>
       <div className="social-links">
-        <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="https://discord.gg/pumpdotfun" target="_blank" rel="noopener noreferrer">Discord</a>
         <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
         <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
         <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">Pump.fun</a>
@@ -348,7 +348,7 @@ const HorseRace = () => {
         
         <div className="header-right">
           <div className="header-social-links">
-            <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+            <a href="https://discord.gg/pumpdotfun" target="_blank" rel="noopener noreferrer">Discord</a>
             <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
             <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
           </div>
@@ -497,7 +497,7 @@ const HorseRace = () => {
       <footer className={`footer ${showFooter ? 'visible' : ''}`}>
         <p>Solana Degen Derby © 2024 All Rights Reserved</p>
         <div className="social-links">
-          <a href="https://discord.gg/YTTpbNN7" target="_blank" rel="noopener noreferrer">Discord</a>
+          <a href="https://discord.gg/pumpdotfun" target="_blank" rel="noopener noreferrer">Discord</a>
           <a href="https://t.me/SolanaDegenDerby" target="_blank" rel="noopener noreferrer">Telegram</a>
           <a href="https://x.com/soldegenderby" target="_blank" rel="noopener noreferrer">Twitter</a>
           <a href="https://pump.fun" target="_blank" rel="noopener noreferrer">Pump.fun</a>
